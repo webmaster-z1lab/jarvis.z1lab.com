@@ -19,8 +19,8 @@ class IncidentRepository
         return $incident;
     }
 
-    public function getIncidentByCheck(Check $check): ?Incident
+    public function getOpenIncident(Check $check): ?Incident
     {
-
+        return Incident::fromHost($check->host)->isOpen()->first();
     }
 }

@@ -2,7 +2,8 @@
 
 namespace App\Observers;
 
-use App\Jobs\MakeIncident;
+use App\Jobs\HandleFailCheck;
+use App\Jobs\HandleSuccessCheck;
 use App\Models\Check;
 use App\Models\CheckStatus;
 
@@ -13,8 +14,12 @@ class CheckObserver
      */
     public function created(Check $check): void
     {
+        if($check->status === CheckStatus::SUCCESS) {
+            HandleSuccessCheck::dispatch($check);
+        }
+
         if($check->status === CheckStatus::FAILED) {
-            MakeIncident::dispatch($check);
+            HandleFailCheck::dispatch($check);
         }
     }
 }

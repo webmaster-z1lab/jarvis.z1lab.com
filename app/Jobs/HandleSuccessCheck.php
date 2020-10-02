@@ -9,22 +9,27 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class MakeIncident implements ShouldQueue
+class HandleSuccessCheck implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
-     * MakeIncident constructor.
+     * @var \App\Models\Check
+     */
+    protected $check;
+
+    /**
+     * HandleSuccessCheck constructor.
      *
      * @param  \App\Models\Check  $check
      */
     public function __construct(Check $check)
     {
-        //
+        $this->check = $check;
     }
 
     public function handle(): void
     {
-        //
+
     }
 }
