@@ -6,17 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Incident
- *
- * @package App\Models
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Check[] $checks
- * @property-read int|null $checks_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Incident newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Incident newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Incident query()
- * @mixin \Eloquent
- */
 class Incident extends Model
 {
     use HasFactory;
@@ -26,6 +15,11 @@ class Incident extends Model
         'finished_at',
         'description',
         'solution',
+    ];
+
+    protected $dates = [
+        'started_at',
+        'finished_at',
     ];
 
     /**

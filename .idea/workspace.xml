@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b3d7a4-7608-4195-b79b-f84ebecaf4c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Jobs/HandleFailCheck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_150231_create_incidents_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_150422_create_metrics_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_150459_create_servers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_150554_create_services_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/MakeIncident.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/HandleSuccessCheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/HandleFailCheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/HandleFailCheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Check.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Host.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Host.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Incident.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Incident.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/CheckObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/CheckObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Metric.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Metric.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Server.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Server.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/IncidentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/IncidentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/HandlesCheckResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/IsActive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_183543_create_check_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_29_183543_create_check_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +190,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-airbrake" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -221,11 +230,25 @@
       <workItem from="1601554281759" duration="20327000" />
       <workItem from="1601644821866" duration="5659000" />
       <workItem from="1601663867931" duration="2761000" />
+      <workItem from="1601676387737" duration="298000" />
+      <workItem from="1601919632039" duration="5036000" />
     </task>
+    <task id="LOCAL-00001" summary="Created Checks Jobs;">
+      <created>1601676409299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601676409299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created Checks Jobs;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Checks Jobs;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="736" y="395" width="447" height="410" key="#Composer" timestamp="1601474399328">
@@ -244,10 +267,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="705" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601664346158" />
-    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601575401707">
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601923959821">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601575401707" />
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601923959821" />
+    <state x="564" y="128" key="CommitChangelistDialog2" timestamp="1601676408644">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="564" y="128" key="CommitChangelistDialog2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601676408644" />
     <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1601489514664">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -268,21 +295,25 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601663742863" />
-    <state x="721" y="282" key="NewPhpClassDialog" timestamp="1601656296376">
+    <state x="721" y="282" key="NewPhpClassDialog" timestamp="1601923948503">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="721" y="282" key="NewPhpClassDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601656296376" />
+    <state x="721" y="282" key="NewPhpClassDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601923948503" />
     <state x="461" y="204" key="SettingsEditor" timestamp="1601413943259">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="461" y="204" key="SettingsEditor/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601413943259" />
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1601663881143">
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1601676413712">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601663881143" />
-    <state x="-1640" y="40" width="1392" height="697" maximized="true" key="dock-window-1" timestamp="1601576678773">
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601676413712" />
+    <state x="-967" y="40" width="974" height="1047" key="dock-window-1" timestamp="1601921850344">
       <screen x="-1920" y="40" width="1920" height="1040" />
     </state>
-    <state x="-1640" y="40" width="1392" height="697" maximized="true" key="dock-window-1/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601576678773" />
+    <state x="-967" y="40" width="974" height="1047" key="dock-window-1/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601921850344" />
+    <state x="-967" y="40" width="974" height="1047" key="dock-window-2" timestamp="1601923721011">
+      <screen x="-1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="-967" y="40" width="974" height="1047" key="dock-window-2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601923721011" />
   </component>
 </project>

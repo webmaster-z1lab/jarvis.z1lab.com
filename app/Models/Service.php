@@ -23,9 +23,15 @@ class Service extends Model
         'provider',
         'region',
         'status',
+        'is_active',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
     ];
 
     protected $attributes = [
-        'status' => ServiceStatus::ONLINE
+        'status'    => ServiceStatus::ONLINE,
+        'is_active' => TRUE,
     ];
 }

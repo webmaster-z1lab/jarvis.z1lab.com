@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Check;
+use App\Repositories\IncidentRepository;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -28,13 +29,16 @@ class HandleFailCheck implements ShouldQueue
         $this->check = $check;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle(): void
     {
+        $incidentRepository = new IncidentRepository();
 
+        $incident = $incidentRepository->getOpenIncident($this->check);
+
+        if(NULL === $incident) {
+            $incidentRepository->create($this->check);
+        } else {
+            $incidentRepository->addEvent($incident, $this->check);
+        }
     }
 }

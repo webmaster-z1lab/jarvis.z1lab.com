@@ -16,6 +16,7 @@ class CreateCheckTable extends Migration
         Schema::create('checks', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('host_id')->nullable();
+            $table->uuid('incident_id')->nullable();
             $table->string('status')->default(\App\Models\CheckStatus::NOT_CHECKED);
             $table->integer('code')->nullable();
             $table->float('latency')->nullable();

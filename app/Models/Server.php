@@ -2,22 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\IsActive;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * App\Models\Server
- *
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Metric[] $metrics
- * @property-read int|null $metrics_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Server newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Server newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Server query()
- * @mixin \Eloquent
- */
 class Server extends Model
 {
-    use HasFactory;
+    use HasFactory, IsActive;
 
     protected $fillable = [
         'type',
@@ -30,9 +21,8 @@ class Server extends Model
         'ssh_key',
     ];
 
-    protected $attributes = [
-        'port' => 22,
-        'password' => '',
+    protected $casts = [
+        'is_active' => 'boolean',
     ];
 
     /**
