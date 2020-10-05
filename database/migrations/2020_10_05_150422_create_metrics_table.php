@@ -6,14 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMetricsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
-        Schema::table('metrics', function (Blueprint $table) {
+        Schema::create('metrics', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('server_id')->nullable();
             $table->float('cpu');
@@ -23,12 +18,7 @@ class CreateMetricsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('metrics');
     }

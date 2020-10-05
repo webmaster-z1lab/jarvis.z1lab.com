@@ -6,14 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateServersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
-        Schema::table('servers', function (Blueprint $table) {
+        Schema::create('servers', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('type')->default('t3');
             $table->string('ip')->nullable();
@@ -28,12 +23,7 @@ class CreateServersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('servers');
     }

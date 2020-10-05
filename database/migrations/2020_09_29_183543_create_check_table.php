@@ -6,12 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCheckTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
         Schema::create('checks', function (Blueprint $table) {
             $table->uuid('id')->primary();
@@ -26,12 +21,7 @@ class CreateCheckTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('status');
     }
