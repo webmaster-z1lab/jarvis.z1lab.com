@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Check;
+use App\Models\CheckStatus;
+use App\Models\Host;
 use App\Repositories\HostRepository;
 use App\Services\HostCheckService;
 use Illuminate\Console\Command;
@@ -22,18 +25,32 @@ class RunChecksCommand extends Command
             $this->info("Starting check for {$hosts->count()} host(s).");
             $bar = $this->createProgressBar($hosts->count());
 
+            /**
+             * @var \App\Models\Host $host
+             */
             foreach ($bar->iterate($hosts) as $host) {
-                (new HostCheckService())->check($host);
+                $check = (new HostCheckService())->check($host);
+
+                $this->checkMessage($host, $check);
             }
         } else {
             $this->info("Starting check for {$host->name}.");
 
             $check = (new HostCheckService())->check($host);
 
-            $this->info("Finished check for {$host->name} with status {$check->status}.");
+            $this->checkMessage($host, $check);
         }
 
         $this->info('Finished hosts check.');
+    }
+
+    private function checkMessage(Host $host, Check $check)
+    {
+        if($check->status === CheckStatus::SUCCESS) {
+            $this->info("{$host->name} check {$check->status}.");
+        } else {
+            $this->error("{$host->name} check {$check->status}.");
+        }
     }
 
     /**
