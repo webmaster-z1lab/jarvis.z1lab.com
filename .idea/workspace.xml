@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b3d7a4-7608-4195-b79b-f84ebecaf4c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/CreateServerCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/CreateServiceCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/RunChecksCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/RunChecksCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +219,7 @@
       <workItem from="1601676387737" duration="298000" />
       <workItem from="1601919632039" duration="10029000" />
       <workItem from="1601986184058" duration="276000" />
-      <workItem from="1602073540648" duration="7325000" />
+      <workItem from="1602073540648" duration="8256000" />
     </task>
     <task id="LOCAL-00001" summary="Created Checks Jobs;">
       <created>1601676409299</created>
@@ -248,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601927536099</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created README content;">
+      <created>1602091264622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602091264622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +258,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created Checks Jobs;" />
     <MESSAGE value="Updated models &amp; migrations;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated models &amp; migrations;" />
+    <MESSAGE value="Created README content;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created README content;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="736" y="395" width="447" height="410" key="#Composer" timestamp="1601474399328">
@@ -280,10 +282,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601923959821" />
-    <state x="564" y="128" key="CommitChangelistDialog2" timestamp="1601927535541">
+    <state x="564" y="128" key="CommitChangelistDialog2" timestamp="1602091263910">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="564" y="128" key="CommitChangelistDialog2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1601927535541" />
+    <state x="564" y="128" key="CommitChangelistDialog2/0.40.1920.1040/-1920.40.1920.1040@0.40.1920.1040" timestamp="1602091263910" />
     <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1601986460152">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
