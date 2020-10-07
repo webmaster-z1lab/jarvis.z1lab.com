@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Check;
+use App\Repositories\IncidentRepository;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -30,6 +31,12 @@ class HandleSuccessCheck implements ShouldQueue
 
     public function handle(): void
     {
+        $incidentRepository = new IncidentRepository();
 
+        $incident = $incidentRepository->getOpenIncident($this->check);
+
+        if($incident !== NULL) {
+            $incidentRepository->closeIncident($incident, $this->check);
+        }
     }
 }

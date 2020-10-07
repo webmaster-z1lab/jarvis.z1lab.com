@@ -42,4 +42,17 @@ class IncidentRepository
 
         return $incident;
     }
+
+    /**
+     * @param  \App\Models\Incident  $incident
+     * @param  \App\Models\Check     $check
+     *
+     * @return \App\Models\Incident
+     */
+    public function closeIncident(Incident $incident, Check $check): Incident
+    {
+        $incident->update(['finished_at' => $check->created_at]);
+
+        return $incident;
+    }
 }
